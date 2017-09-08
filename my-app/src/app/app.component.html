@@ -1,0 +1,36 @@
+<div class="main">
+  <h1 class="project-title">Broadcast System</h1>
+  <section class="section-main">
+    <h1 class="section-title" *ngIf="showInputs; else elseBlock">Please enter recipient and message: </h1>
+    <ng-template #elseBlock><h1 class="section-title">Please enter username: </h1></ng-template>
+    <div class="section-body">
+      <form #formValues="ngForm" (ngSubmit)="submitForm($event, formValues)">
+        <div class="form-row">
+          <label for="username">Username</label>
+          <input name="username" ngModel required #username="ngModel">
+        </div>
+        <div class="form-row" *ngIf="showInputs">
+          <label for="recipient">Recipient</label>
+          <input name="recipient" ngModel required #recipient="ngModel">
+        </div>
+        <div class="form-row" *ngIf="showInputs">
+          <label for="message">Message</label>
+          <input name="message" ngModel required #message="ngModel" maxlength="100">
+        </div>
+        <div class="form-row">
+          <button type="submit" [disabled]="!formValues.valid">Send</button>
+        </div>
+        <p *ngIf="errorMessage">Message was too long!</p>
+        <div class="form-row" *ngIf="(formData | json) != '{}'">
+          <h2>Output: </h2>
+          <p>From: {{formData.username}}</p>
+          <p>To: {{formData.recipient}}</p>
+          <p>Message: {{formData.message}}</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+<style>
+body{background-color: #ececec;}
+</style>

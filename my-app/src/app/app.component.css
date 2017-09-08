@@ -1,0 +1,33 @@
+html{
+	background: #ececec;
+	height: 100vw;
+}
+.main{
+	background:#ececec;
+	padding: 20px;
+}
+h1,form{
+	text-align: center;
+}
+h1.project-title{
+	font-size: 36px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+.form-row{
+	margin-top:15px;
+}
+.form-row input{
+	padding: 5px;
+}
+.form-row label{
+	text-transform: uppercase;
+	margin-right: 5px;
+}
+button{
+	padding: 5px 10px;
+	background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
