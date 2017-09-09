@@ -1,8 +1,8 @@
 <div class="main">
   <h1 class="project-title">Broadcast System</h1>
   <section class="section-main">
-    <h1 class="section-title" *ngIf="showInputs; else elseBlock">Please enter recipient and message: </h1>
-    <ng-template #elseBlock><h1 class="section-title">Please enter username: </h1></ng-template>
+    <h1 class="section-title" *ngIf="showInputs">Please enter recipient and message: </h1>
+    <h1 class="section-title" *ngIf="!showInputs">Please enter username: </h1>
     <div class="section-body">
       <form #formValues="ngForm" (ngSubmit)="submitForm($event, formValues)">
         <div class="form-row">
